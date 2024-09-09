@@ -3,7 +3,7 @@ const numberOfClasses = 10;
 
 // Links das aulas, avaliação e feedback
 const courseLinks = [
-    'https://www.youtube.com/watch?v=FtEVgwwGwDs',
+    'modulos.html',
     'https://www.youtube.com/watch?v=ObKWwhGJ8rs',
     'https://exemplo.com/aula3',
     'https://exemplo.com/aula4',
