@@ -1,0 +1,81 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url('imagens/fundo.jpg'); /* Substitua pelo caminho correto da sua imagem */
+    background-position: absolute;
+    background-repeat: no-repeat;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(20, 56, 136, 0.8); /* Corrigi a cor para o formato rgba */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.login-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fdfdfd;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 9px;
+    margin: 10px 0;
+    border: 3px solid #0c08f0;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.login-container button {
+    width: 30%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block; /* Faz o botão ser tratado como bloco */
+     margin-left: auto; /* Margem automática à esquerda */
+     margin-right: auto; /* Margem automática à direita */
+}
+
+.login-container button:hover {
+    background-color: #2d86eb;
+}
+
+.login-container .links {
+    text-align: center;
+}
+
+.login-container .links a {
+    color: #fdfdfd;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-block;
+}
+
+.login-container .links a:hover {
+    text-decoration: underline;
+}
