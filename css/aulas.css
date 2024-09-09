@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f6f6f6;
 }
 
 /* Cabeçalho */
@@ -27,8 +27,8 @@ body {
 /* Sidebar */
 .sidebar {
     width: 200px;
-    height: auto;
-    background-color: #1809f2;
+    height: ;
+    background-color: #1b1a1c;
     padding: 15px;
 }
 
@@ -48,6 +48,6 @@ body {
 
 /* Área de conteúdo */
 .content {
-    flex-grow: 1;
-    padding: absolute;
+    flex-grow: 10;
+    padding: flex;
 }

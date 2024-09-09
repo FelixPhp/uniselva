@@ -1,47 +1,37 @@
-// Monitoramento do vídeo
-var player;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('youtube-player', {
-        events: {
-            'onStateChange': onPlayerStateChange
-        }
-    });
-}
+// Array com os links dos vídeos do YouTube
+const videos = [
+    'https://www.youtube.com/embed/FtEVgwwGwDs',  // Vídeo 1
+    'https://www.youtube.com/embed/VIDEO_ID_2',   // Vídeo 2
+    'https://www.youtube.com/embed/VIDEO_ID_3'    // Vídeo 3
+];
 
-function onPlayerStateChange(event) {
-    if (event.data === YT.PlayerState.ENDED) {
-        document.getElementById('confirm-button').disabled = false;
-        document.getElementById('next-video-button').style.display = 'block';
-    }
-}
+let currentVideoIndex = 0; // Índice do vídeo atual
 
-document.getElementById('confirm-button').addEventListener('click', function() {
-    const nextVideoButton = document.getElementById('next-video-button');
-    nextVideoButton.style.display = 'block';
-    updateProgressBar(); // Atualiza a barra de progresso
-});
+// Função para carregar o próximo vídeo no iframe
+function loadNextVideo() {
+    currentVideoIndex++;
 
-document.getElementById('next-video-button').addEventListener('click', function() {
-    const nextVideo = document.getElementById('video2');
-    if (nextVideo) {
-        nextVideo.classList.remove('disabled');
-        const nextVideoId = nextVideo.getAttribute('data-video-id');
-        player.loadVideoById(nextVideoId);  // Carrega o próximo vídeo
-        this.style.display = 'none'; // Esconde o botão após carregar o próximo vídeo
-    }
-});
-
-function updateProgressBar() {
-    // Lógica para atualizar a barra de progresso
-    let currentProgress = parseInt(document.getElementById('progressBar').value, 10);
-    document.getElementById('progressBar').value = currentProgress + 10; // Incrementa 10% para cada vídeo assistido
-}
-
-// Salvando as anotações
-document.getElementById('save-notes-button').addEventListener('click', function() {
-    const notes = document.getElementById('notes').value;
-    if (notes) {
-        localStorage.setItem('userNotes', notes);
-        alert('Anotações salvas com sucesso!');
+    // Verifica se há mais vídeos no array
+    if (currentVideoIndex < videos.length) {
+        const iframe = document.getElementById('youtube-player');
+        iframe.src = videos[currentVideoIndex];  // Carrega o próximo vídeo no iframe
+        document.getElementById('confirm-button').disabled = true; // Desabilita o botão de confirmação para o próximo vídeo
     } else {
-        alert('Por favor, insira alguma anotação antes de salvar
+        alert('Você completou todos os vídeos!');
+    }
+}
+
+// Função para monitorar o progresso do vídeo (utilizando a API do YouTube seria ideal)
+document.getElementById('youtube-player').onload = function() {
+    const iframe = document.getElementById('youtube-player');
+    
+    // Quando o vídeo termina, habilita o botão de confirmação
+    iframe.contentWindow.onended = function() {
+        document.getElementById('confirm-button').disabled = false;
+    };
+};
+
+// Função para confirmar que o vídeo foi assistido
+document.getElementById('confirm-button').onclick = function() {
+    document.getElementById('next-video-button').disabled = false; // Habilita o botão "Próximo Vídeo"
+};
