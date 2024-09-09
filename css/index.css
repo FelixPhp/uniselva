@@ -5,7 +5,7 @@ body, html {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-image: url('/imagens/logoweb.webp'); /* Substitua pelo caminho correto da sua imagem */
+    background-image: url('/imagens/fundo.jpg'); /* Substitua pelo caminho correto da sua imagem */
     background-position: absolute;
     background-repeat: no-repeat;
 }
