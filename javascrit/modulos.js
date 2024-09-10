@@ -1,7 +1,7 @@
 // Array com os links dos vídeos do YouTube
 const videos = [
     'https://www.youtube.com/embed/FtEVgwwGwDs',  // Vídeo 1
-    'https://www.youtube.com/embed/VIDEO_ID_2',   // Vídeo 2
+    'https://www.youtube.com/watch?v=ZL9pTiY1RPg',   // Vídeo 2
     'https://www.youtube.com/embed/VIDEO_ID_3'    // Vídeo 3
 ];
 
