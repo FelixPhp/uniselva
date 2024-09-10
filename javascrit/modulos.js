@@ -1,37 +1,42 @@
-// Array com os links dos vídeos do YouTube
 const videos = [
     'https://www.youtube.com/embed/FtEVgwwGwDs',  // Vídeo 1
-    'https://www.youtube.com/watch?v=ZL9pTiY1RPg',   // Vídeo 2
+    'https://www.youtube.com/embed/ZL9pTiY1RPg',  // Vídeo 2
     'https://www.youtube.com/embed/VIDEO_ID_3'    // Vídeo 3
 ];
 
-let currentVideoIndex = 0; // Índice do vídeo atual
+let currentVideoIndex = 0;
+let player;
 
-// Função para carregar o próximo vídeo no iframe
+// Função chamada pela API do YouTube quando está pronta
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube-player', {
+        events: {
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+// Função para detectar o término do vídeo
+function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.ENDED) {
+        document.getElementById('confirm-button').disabled = false;  // Habilita o botão de confirmação
+    }
+}
+
+// Função para carregar o próximo vídeo
 function loadNextVideo() {
     currentVideoIndex++;
 
-    // Verifica se há mais vídeos no array
     if (currentVideoIndex < videos.length) {
-        const iframe = document.getElementById('youtube-player');
-        iframe.src = videos[currentVideoIndex];  // Carrega o próximo vídeo no iframe
-        document.getElementById('confirm-button').disabled = true; // Desabilita o botão de confirmação para o próximo vídeo
+        player.loadVideoByUrl(videos[currentVideoIndex]);  // Carrega o próximo vídeo
+        document.getElementById('confirm-button').disabled = true;  // Desabilita o botão de confirmação para o próximo vídeo
+        document.getElementById('next-video-button').disabled = true;  // Desabilita o botão "Próximo Vídeo"
     } else {
         alert('Você completou todos os vídeos!');
     }
 }
 
-// Função para monitorar o progresso do vídeo (utilizando a API do YouTube seria ideal)
-document.getElementById('youtube-player').onload = function() {
-    const iframe = document.getElementById('youtube-player');
-    
-    // Quando o vídeo termina, habilita o botão de confirmação
-    iframe.contentWindow.onended = function() {
-        document.getElementById('confirm-button').disabled = false;
-    };
-};
-
 // Função para confirmar que o vídeo foi assistido
 document.getElementById('confirm-button').onclick = function() {
-    document.getElementById('https://www.youtube.com/watch?v=ZL9pTiY1RPg').disabled = false; // Habilita o botão "Próximo Vídeo"
+    document.getElementById('next-video-button').disabled = false;  // Habilita o botão "Próximo Vídeo"
 };
