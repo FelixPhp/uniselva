@@ -33,5 +33,5 @@ document.getElementById('youtube-player').onload = function() {
 
 // Função para confirmar que o vídeo foi assistido
 document.getElementById('confirm-button').onclick = function() {
-    document.getElementById('next-video-button').disabled = false; // Habilita o botão "Próximo Vídeo"
+    document.getElementById('https://www.youtube.com/watch?v=ZL9pTiY1RPg').disabled = false; // Habilita o botão "Próximo Vídeo"
 };
