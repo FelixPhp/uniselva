@@ -20,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Redireciona dependendo do tipo de usuário
             if ($user['tipo_usuario'] == 'administrador') {
-                header("Location: admin_dashboard.php");
+                header("Location: admin_painel.php");
             } else {
-                header("Location: aluno_dashboard.php");
+                header("Location: aluno_painel.php");
             }
         } else {
             echo "Senha incorreta!";

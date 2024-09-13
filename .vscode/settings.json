@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorCustomizations": {},
+    "vscode-edge-devtools.webhintInstallNotification": true,
+    "cSpell.userWords": [
+        "produto"
+    ],
+    "files.autoSave": "afterDelay",
+    "editor.wordWrap": "on",
+    "php.debug.executablePath": "C:\wamp64\bin\php\php8.1.0\"  // Exemplo de caminho
+}

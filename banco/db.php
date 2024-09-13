@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
+$servername = "localhost:3306";
 $username = "root"; // Usuário do MySQL
 $password = "";     // Senha do MySQL
-$dbname = "nome_do_banco"; // Nome do banco que você criou
+$dbname = "sistemas_alunas"; // Nome do banco que você criou
 
 // Cria a conexão
 $conn = new mysqli($servername, $username, $password, $dbname);

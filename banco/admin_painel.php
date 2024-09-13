@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['adicionar_aula'])) {
 
 // Exibir o formulário de adição de aula
 ?>
-<form action="admin_dashboard.php" method="POST">
+<form action="admin_painel.php" method="POST">
     <label for="curso_id">Curso:</label>
     <select name="curso_id">
         <?php
