@@ -1,8 +1,8 @@
 // Dados fictícios de cursos e alunos
 const courses = [
-    { id: 1, name: "Curso de HTML" },
-    { id: 2, name: "Curso de CSS" },
-    { id: 3, name: "Curso de JavaScript" },
+    { id: 1, name: "Curso de Integração" },
+    { id: 2, name: "Curso de Etica" },
+    { id: 3, name: "Curso de Gestão" },
 ];
 
 const students = {
@@ -24,13 +24,13 @@ const students = {
 const courseList = document.getElementById('courseList');
 const studentProgress = document.getElementById('studentProgress');
 
-// Função para carregar cursos
+// Função para carregar cursos como botões
 function loadCourses() {
     courses.forEach(course => {
-        const li = document.createElement('li');
-        li.textContent = course.name;
-        li.addEventListener('click', () => loadStudents(course.id));
-        courseList.appendChild(li);
+        const button = document.createElement('button');
+        button.textContent = course.name;
+        button.addEventListener('click', () => loadStudents(course.id));
+        courseList.appendChild(button);
     });
 }
 
