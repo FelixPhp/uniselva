@@ -12,9 +12,8 @@ body {
 /* Faixa azul no topo */
 header {
     width: 100%;
-    height: 90px;
+    height: 100px;
     background-color: #1809f2; /* Azul */
-    background-color: #; /* Azul */
     position: fixed;
     top: 0;
     left: 0;
@@ -33,10 +32,10 @@ header {
 
 /* Faixa azul à esquerda */
 .sidebar {
-    width: 60px;
+    width: 100px;
     background-color: #1809f2; /* Azul */
     position: fixed;
-    top: 60px; /* Abaixo do header */
+    top: 100px; /* Abaixo do header */
     left: 0;
     height: calc(100% - 60px); /* Altura total menos o header */
 }
