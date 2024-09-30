@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.courses {
+    width: 30%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 2px solid #ccc;
+}
+
+.courses h2 {
+    margin-bottom: 15px;
+}
+
+.courses ul {
+    list-style: none;
+}
+
+.courses ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.students {
+    width: 70%;
+    padding: 20px;
+}
+
+.students h2 {
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
