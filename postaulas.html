@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Aulas</title>
+    <link rel="stylesheet" href="css/postaulas.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Aulas</h1>
+        
+        <!-- Área para adicionar novas aulas -->
+        <div class="add-aula">
+            <input type="text" id="youtube-url" placeholder="Insira o URL do vídeo do YouTube">
+            <button onclick="adicionarAula()">Adicionar Aula</button>
+        </div>
+
+        <!-- Lista de aulas -->
+        <div id="aulas-container"></div>
+    </div>
+
+    <script src="javascrit/postaulas.js"></script>
+</body>
+</html>
