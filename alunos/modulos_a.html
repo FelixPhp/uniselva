@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Online</title>
+    <link rel="stylesheet" href="css/modulos.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+    <div class="progress-bar-container">
+        <label for="progressBar">Progresso do Curso:</label>
+        <progress id="progressBar" value="0" max="100"></progress>
+    </div>
+    <div class="content">
+        <div class="video-container">
+            <div id="video-player">
+                <!-- Embed do vídeo do YouTube -->
+                <iframe id="youtube-player" width="1080" height="720" src="https://www.youtube.com/embed/FtEVgwwGwDs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <button id="confirm-button" disabled>Confirmar que assistiu</button>
+            <button id="next-video-button" class="next-video-button">Próximo Vídeo</button>
+        </div>
+        <div class="notes-container">
+            <h3>Anotações</h3>
+            <textarea id="notes" rows="15" cols="50"></textarea>
+            <button id="save-notes-button">Salvar Anotações</button>
+        </div>
+    </div>
+
+    <script src="javascrit/modulos.js"></script> <!-- Link para o arquivo JavaScript -->
+</body>
+</html>
